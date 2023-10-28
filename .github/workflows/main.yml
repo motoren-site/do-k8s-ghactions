@@ -18,10 +18,10 @@ jobs:
         password: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
 
     - name: Build latest
-      run: docker build -t registry.digitalocean.com/containers/do-k8s-ghactions:$(echo $GITHUB_SHA | head -c7) .
+      run: docker build -t registry.digitalocean.com/containers/do-k8s-ghactions:latest .
 
     - name: Push to Digital Ocean
-      run: docker push registry.digitalocean.com/containers/do-k8s-ghactions:$(echo $GITHUB_SHA | head -c7)
+      run: docker push registry.digitalocean.com/containers/do-k8s-ghactions:latest
 
       # Set up the Kubernetes CLI with your DigitalOcean Kubernetes cluster.
 

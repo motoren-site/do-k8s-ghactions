@@ -22,3 +22,16 @@ jobs:
 
     - name: Push to Digital Ocean
       run: docker push registry.digitalocean.com/containers/do-k8s-ghactions:$(echo $GITHUB_SHA | head -c7)
+
+      # Set up the Kubernetes CLI with your DigitalOcean Kubernetes cluster.
+
+    - name: Set up kubectl
+      uses: matootie/dokube@v1.4.0
+      with:
+        personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
+        clusterName: k8s-bergen
+        expirationTime: "1200"
+
+    # Run any kubectl commands you want!
+    - name: Get nodes
+      run: kubectl get nodes

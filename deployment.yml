@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: do-k8s-ghactions-mahdi
+        app: container-by-mahdi
     spec:
       containers:
       - name: do-k8s-ghactions-mahdi

@@ -32,6 +32,8 @@ jobs:
         clusterName: k8s-bergen
         expirationTime: "1200"
 
-    # Run any kubectl commands you want!
+    - name: Create deployment
+      run: kubectl apply -f deployment.yml
+
     - name: Get nodes
       run: kubectl get nodes

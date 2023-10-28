@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deployment-by-mahdi
+  namespace: apps
   labels:
     app: container-by-mahdi
 spec:
